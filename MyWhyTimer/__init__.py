@@ -1,8 +1,8 @@
 import datetime
 import logging
-
 import azure.functions as func
-
+import os
+from twilio.rest import Client
 
 def main(mytimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
@@ -13,16 +13,16 @@ def main(mytimer: func.TimerRequest) -> None:
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        body="""To cultivate enduring growth and improvement, 
-        so that those I love and those in my orbit are emboldened to be their best. /n
-        Live in the Present:/n
-            Family time is family time. Practice digital minimalism./n
-        Do Your Damn Job:/n
-            There are too many soft people in the world. Don't be one of them./n
-        Invest in Yourself:/n
-            Never stop learning. Reading and doing./n
-        'Stand Up Straight With Your Shoulders Back':/n
-            Be quiet and be confident. You've been through worse.""",
+        body="""\n\n
+    To cultivate enduring growth and improvement, so that those I love and those in my orbit are emboldened to be their best.\n\n
+-Live in the Present:
+Family time is family time. Practice digital minimalism.\n\n
+-Do Your Damn Job:
+There are too many soft people in the world. Don't be one of them.\n\n
+-Invest in Yourself:
+Never stop learning. Reading and doing.\n\n
+-'Stand Up Straight With Your Shoulders Back':
+Be quiet and be confident. You've been through worse.""",
         from_='+18776068924', 
         to='+18142440043' 
     )
