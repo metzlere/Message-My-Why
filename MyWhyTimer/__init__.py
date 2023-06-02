@@ -14,7 +14,7 @@ def main(mytimer: func.TimerRequest) -> None:
 
     message = client.messages.create(
         body="""\n\n
-    To cultivate enduring growth and improvement, so that those I love and those in my orbit are emboldened to be their best.\n\n
+To provide shelter from the storm, so that my family and those in my orbit feel safe and loved.\n\n
 -Live in the Present:
 Family time is family time. Practice digital minimalism.\n\n
 -Do Your Damn Job:
